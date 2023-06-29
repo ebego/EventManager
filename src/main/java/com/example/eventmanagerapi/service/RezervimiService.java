@@ -17,13 +17,14 @@ public class RezervimiService {
     private static List<Rezervimi> rezervimiList = new ArrayList<>();
 
     public List<Rezervimi> getRezervimi(){
-        List<Rezervimi> result = new ArrayList();
-        rezervimiRepository.findAll().forEach(result::add);
-        return result;
+//        List<Rezervimi> result = new ArrayList();
+//        rezervimiRepository.findAll().forEach(result::add);
+//        return result;
+        return rezervimiList;
     }
 
-    public void addRezervimi(Rezervimi perdoruesi){
-        rezervimiRepository.save(perdoruesi);
+    public void addRezervimi(Rezervimi rezervimi){
+        rezervimiRepository.save(rezervimi);
     }
     public Rezervimi getRezervimiById(int id) throws FileNukUGjetException {
         return rezervimiRepository.findRezervimiById(id);

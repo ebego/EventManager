@@ -16,11 +16,11 @@ public class EventiService {
     private static List<Eventi> eventiList = new ArrayList<>();
 
     public List<Eventi> getEventi(){
-        List<Eventi> result = new ArrayList();
-        eventiRepository.findAll().forEach(result::add);
-        return result;
+//        List<Eventi> result = new ArrayList();
+//        eventiRepository.findAll().forEach(result::add);
+//        return result;
+        return eventiList;
     }
-
     public void addEventi(Eventi eventi){
         eventiRepository.save(eventi);
     }

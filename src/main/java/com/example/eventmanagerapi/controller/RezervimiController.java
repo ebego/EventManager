@@ -23,7 +23,7 @@ public class RezervimiController {
     }
     @GetMapping("/rezervim/{id}")
     public Rezervimi getRezervimiById(@PathVariable("id") int id) throws FileNukUGjetException {
-        return rezervimiService.getRezervimiRepository().findRezervimiById(id);
+        return rezervimiService.getRezervimiById(id);
     }
 
     @PostMapping("/rezervim")

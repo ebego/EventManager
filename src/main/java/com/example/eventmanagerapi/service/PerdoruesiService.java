@@ -18,9 +18,10 @@ public class PerdoruesiService {
     private static List<Perdoruesi> perdoruesiList = new ArrayList<>();
 
     public List<Perdoruesi> getPerdoruesi(){
-        List<Perdoruesi> result = new ArrayList();
-        perdoruesiRepository.findAll().forEach(result::add);
-        return result;
+//        List<Perdoruesi> result = new ArrayList();
+//        perdoruesiRepository.findAll().forEach(result::add);
+//        return result;
+        return perdoruesiList;
     }
 
     public void addPerdoruesi(Perdoruesi perdoruesi){
