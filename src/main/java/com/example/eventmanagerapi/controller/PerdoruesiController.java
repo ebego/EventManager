@@ -23,11 +23,14 @@ public class PerdoruesiController {
     }
     @GetMapping("/perdorues/{id}")
     public Perdoruesi getPerdoruesiById(@PathVariable("id") int id) throws FileNukUGjetException {
-        return perdoruesiService.getPerdoruesiRepository().findPerdoruesiById(id);
+        return perdoruesiService.getPerdoruesiById(id);
     }
-
     @PostMapping("/perdorues")
     public void addPerdorues(@Validated @RequestBody Perdoruesi perdoruesi)  {
         perdoruesiService.addPerdoruesi(perdoruesi);
+    }
+    @DeleteMapping("/perdorues")
+    public void deletePerdorues(@Validated @RequestBody Perdoruesi perdoruesi)  {
+        perdoruesiService.deletePerdoruesi(perdoruesi);
     }
 }
