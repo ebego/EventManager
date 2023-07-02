@@ -1,5 +1,6 @@
 package com.eventmanager.api.controller;
 
+import com.eventmanager.api.dto.EventResponse;
 import com.eventmanager.api.entity.Event;
 import com.eventmanager.api.service.EventService;
 import lombok.AllArgsConstructor;
@@ -27,5 +28,10 @@ public class EventController {
     @PostMapping("/events/add")
     public void addEvent(@Validated @RequestBody Event event)  {
         eventService.addEvent(event);
+    }
+
+    @GetMapping("/events/latest")
+    public List<EventResponse> getLatestEvents() {
+        return eventService.getLatestEvents();
     }
 }
