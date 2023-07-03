@@ -24,10 +24,10 @@ public class EventService {
     private static List<Event> eventList = new ArrayList<>();
 
     public List<Event> getEvents(){
-//        List<Eventi> result = new ArrayList();
-//        eventiRepository.findAll().forEach(result::add);
-//        return result;
-        return eventList;
+        List<Event> result = new ArrayList();
+        eventRepository.findAll().forEach(result::add);
+        return result;
+//        return eventList;
     }
     public void addEvent(Event event){
         eventRepository.save(event);
@@ -39,4 +39,8 @@ public class EventService {
     public List<EventResponse> getLatestEvents() {
         return eventRepository.findTop3ByEventDateGreaterThanEqualOrderByEventDateAsc(LocalDate.now());
     }
+    public List<EventResponse> getMostViewedEvents() {
+        return eventRepository.findTop3ByOrderByViewsDesc();
+    }
+
 }

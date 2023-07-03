@@ -22,4 +22,6 @@ public interface EventRepository extends CrudRepository<Event, Long> {
 
     List<EventResponse> findTop3ByEventDateGreaterThanEqualOrderByEventDateAsc(LocalDate date);
 
+    List<EventResponse> findTop3ByOrderByViewsDesc();
+
 }

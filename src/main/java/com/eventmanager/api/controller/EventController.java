@@ -34,4 +34,9 @@ public class EventController {
     public List<EventResponse> getLatestEvents() {
         return eventService.getLatestEvents();
     }
+    @GetMapping("/events/most-viewed")
+    public List<EventResponse> getMostViewedEvents() {
+        return eventService.getMostViewedEvents();
+    }
+
 }
