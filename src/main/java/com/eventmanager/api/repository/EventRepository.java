@@ -12,16 +12,16 @@ import java.util.Optional;
 @Repository
 public interface EventRepository extends CrudRepository<Event, Long> {
 
-    Event findById(int id);
+    EventResponse findById(int id);
 
     List<Event> findAll();
 
     Optional<Event> findByTitleEqualsIgnoreCaseAndEventDateEquals(String title, LocalDate eventDate);
 
-    List<EventResponse> findTop3ByOrderByEventDateAsc();
-
     List<EventResponse> findTop3ByEventDateGreaterThanEqualOrderByEventDateAsc(LocalDate date);
 
     List<EventResponse> findTop3ByOrderByViewsDesc();
+
+    List<EventResponse> findAllByTitleEqualsIgnoreCase(String title);
 
 }

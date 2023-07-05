@@ -4,10 +4,11 @@ import com.eventmanager.api.dto.EventResponse;
 import com.eventmanager.api.entity.Event;
 import com.eventmanager.api.service.EventService;
 import lombok.AllArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
+
 
 @RestController
 @CrossOrigin
@@ -21,8 +22,8 @@ public class EventController {
     }
 
     @GetMapping("/events/{id}")
-    public Event getEventById(@PathVariable("id") int id) {
-        return eventService.getEventRepository().findById(id);
+    public EventResponse getEventById(@PathVariable("id") int id) {
+        return eventService.getEventiById(id);
     }
 
     @PostMapping("/events/add")
@@ -37,6 +38,11 @@ public class EventController {
     @GetMapping("/events/most-viewed")
     public List<EventResponse> getMostViewedEvents() {
         return eventService.getMostViewedEvents();
+    }
+
+    @GetMapping("/events/search")
+    public ResponseEntity<List<EventResponse>> searchBar(@RequestParam("title") String title){
+        return ResponseEntity.ok(eventService.searchBar(title));
     }
 
 }

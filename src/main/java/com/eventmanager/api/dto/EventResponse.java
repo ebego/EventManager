@@ -1,7 +1,6 @@
 package com.eventmanager.api.dto;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 import org.springframework.beans.factory.annotation.Value;
 
 import java.time.LocalDate;

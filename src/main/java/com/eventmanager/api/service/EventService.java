@@ -2,7 +2,6 @@ package com.eventmanager.api.service;
 
 import com.eventmanager.api.dto.EventResponse;
 import com.eventmanager.api.entity.Event;
-import com.eventmanager.api.entity.User;
 import com.eventmanager.api.repository.EventRepository;
 import com.eventmanager.api.repository.UserRepository;
 import lombok.AllArgsConstructor;
@@ -12,7 +11,6 @@ import org.springframework.stereotype.Service;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 @Data
 @Service
@@ -32,7 +30,7 @@ public class EventService {
     public void addEvent(Event event){
         eventRepository.save(event);
     }
-    public Event getEventiById(int id)  {
+    public EventResponse getEventiById(int id)  {
         return eventRepository.findById(id);
     }
 
@@ -43,4 +41,10 @@ public class EventService {
         return eventRepository.findTop3ByOrderByViewsDesc();
     }
 
+    public List<EventResponse> searchBar(String title){
+//        List<EventResponse> event = eventRepository.findAllByTitleEqualsIgnoreCase(title);
+//        return event;
+//        if (eventRepository.eveLocalDate.parse(title) )
+        return eventRepository.findAllByTitleEqualsIgnoreCase(title);
+    }
 }

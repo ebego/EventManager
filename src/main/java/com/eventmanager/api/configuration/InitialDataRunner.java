@@ -1,5 +1,6 @@
 package com.eventmanager.api.configuration;
 
+import com.eventmanager.api.dto.EventResponse;
 import com.eventmanager.api.entity.Event;
 import com.eventmanager.api.entity.User;
 import com.eventmanager.api.repository.EventRepository;
