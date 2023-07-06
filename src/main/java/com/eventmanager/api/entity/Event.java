@@ -29,6 +29,9 @@ public class Event extends BaseEntity {
     private int views;
 
     private String description;
+    private int price;
+
+    private String location;
 
     private String banner;
 

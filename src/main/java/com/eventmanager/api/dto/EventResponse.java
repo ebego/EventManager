@@ -12,6 +12,8 @@ public interface EventResponse {
     String getDescription();
     int getViews();
     String getBanner();
+    int getPrice();
+    String getLocation();
     @Value("#{target.eventDate < T(java.time.LocalDate).now()}")
     boolean isPast();
 }
