@@ -10,6 +10,7 @@ import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
 import java.util.Optional;
+import java.util.UUID;
 
 @Component
 @AllArgsConstructor
@@ -52,7 +53,7 @@ public class InitialDataRunner implements CommandLineRunner {
         createIfNotPresent("Event13", "The thirteenth event of year!", "2023-05-20", adminUser.getId(), 10000, "event13.jpeg",28,15,"Gjirokaster");
     }
 
-    public void createIfNotPresent(String title, String description, String date, int ownerId, int maxBooking, String banner, int views, int price, String location) {
+    public void createIfNotPresent(String title, String description, String date, UUID ownerId, int maxBooking, String banner, int views, int price, String location) {
         LocalDate firstEventDate = LocalDate.parse(date);
         Event firstEvent = Event.builder()
                 .title(title)

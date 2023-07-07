@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 @Service
 @Data
@@ -25,7 +26,7 @@ public class BookingService {
     public void addBooking(Booking rezervimi){
         rezervimiRepository.save(rezervimi);
     }
-    public Booking getRezervimiById(int id)  {
+    public Booking getBookingById(UUID id)  {
         return rezervimiRepository.findBookingById(id);
     }
 }

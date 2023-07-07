@@ -2,12 +2,14 @@ package com.eventmanager.api.dto;
 
 import lombok.*;
 
+import java.util.UUID;
+
 @Getter @Setter
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
 public class UserResponse {
-    protected int id;
+    protected UUID id;
     protected String phone;
     protected String email;
     protected String firstName;

@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 @Data
 @Service
@@ -30,7 +31,7 @@ public class EventService {
     public void addEvent(Event event){
         eventRepository.save(event);
     }
-    public EventResponse getEventiById(int id)  {
+    public EventResponse getEventiById(UUID id)  {
         return eventRepository.findById(id);
     }
 

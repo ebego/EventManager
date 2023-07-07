@@ -7,6 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
+import java.util.UUID;
 
 @Data
 @Builder
@@ -17,10 +18,10 @@ import java.time.LocalDate;
 public class Booking extends BaseEntity {
 
     @Column(name = "event_id")
-    private int eventId;
+    private UUID eventId;
 
     @Column(name = "user_id")
-    private int userId;
+    private UUID userId;
 
     @ManyToOne
     @JoinColumn(name = "event_id", insertable = false, updatable = false)

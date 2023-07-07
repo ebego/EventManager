@@ -7,6 +7,7 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.UUID;
 
 @RestController
 @CrossOrigin
@@ -20,8 +21,8 @@ public class BookingController {
     }
 
     @GetMapping("/bookings/{id}")
-    public Booking getBookingById(@PathVariable("id") int id) {
-        return bookingService.getRezervimiById(id);
+    public Booking getBookingById(@PathVariable("id") UUID id) {
+        return bookingService.getBookingById(id);
     }
 
     @PostMapping("/bookings/add")

@@ -8,6 +8,7 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.UUID;
 
 @RestController
 @CrossOrigin
@@ -20,7 +21,7 @@ public class UserController {
         return userService.getUsers();
     }
     @GetMapping("/users/{id}")
-    public User getUsersById(@PathVariable("id") int id) {
+    public User getUsersById(@PathVariable("id") UUID id) {
         return userService.getUserById(id);
     }
     @PostMapping("/users/add")

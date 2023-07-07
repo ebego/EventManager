@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 import java.util.stream.Collectors;
 
 @Data
@@ -39,7 +40,7 @@ public class UserService {
 //    public Perdoruesi getPerdoruesiById(int id) throws FileNukUGjetException {
 //        return perdoruesiRepository.findPerdoruesiById(id);
 //    }
-    public User getUserById(int id) {
+    public User getUserById(UUID id) {
         if(userList.stream().filter(s->s.getId() == id).noneMatch(p-> true) == true){
             throw new RuntimeException("Not found exception");
         }

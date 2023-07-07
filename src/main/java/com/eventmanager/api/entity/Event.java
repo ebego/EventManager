@@ -8,6 +8,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
+import java.util.UUID;
 
 @Data
 @Builder
@@ -36,7 +37,7 @@ public class Event extends BaseEntity {
     private String banner;
 
     @Column(name = "owner_id")
-    protected int ownerId;
+    protected UUID ownerId;
 
     @ManyToOne
     @JoinColumn(name = "owner_id", insertable = false, updatable = false)

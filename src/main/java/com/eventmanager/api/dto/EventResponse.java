@@ -1,12 +1,11 @@
 package com.eventmanager.api.dto;
 
-import lombok.*;
 import org.springframework.beans.factory.annotation.Value;
-
 import java.time.LocalDate;
 
+
 public interface EventResponse {
-    int getId();
+    String getId();
     String getTitle();
     LocalDate getEventDate();
     String getDescription();
