@@ -11,22 +11,18 @@ import java.util.UUID;
 
 @Service
 @Data
-public class BookingService {
-    private BookingRepository rezervimiRepository;
-
-    private static List<Booking> rezervimiList = new ArrayList<>();
+public class BookingService implements IBookingService{
+    private BookingRepository bookingRepository;
 
     public List<Booking> getBookings(){
-//        List<Rezervimi> result = new ArrayList();
-//        rezervimiRepository.findAll().forEach(result::add);
-//        return result;
-        return rezervimiList;
+        return bookingRepository.findAll();
     }
 
-    public void addBooking(Booking rezervimi){
-        rezervimiRepository.save(rezervimi);
+    public void addBooking(Booking booking){
+        bookingRepository.save(booking);
     }
+
     public Booking getBookingById(UUID id)  {
-        return rezervimiRepository.findBookingById(id);
+        return bookingRepository.findBookingById(id);
     }
 }

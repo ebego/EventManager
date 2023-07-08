@@ -2,7 +2,11 @@ package com.eventmanager.api.repository;
 
 import com.eventmanager.api.dto.EventResponse;
 import com.eventmanager.api.entity.Event;
-import org.springframework.data.repository.CrudRepository;
+import org.hibernate.annotations.Parameter;
+import org.springframework.cglib.core.Local;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import java.time.LocalDate;
@@ -11,9 +15,9 @@ import java.util.Optional;
 import java.util.UUID;
 
 @Repository
-public interface EventRepository extends CrudRepository<Event, org.yaml.snakeyaml.events.Event.ID> {
+public interface EventRepository extends JpaRepository<Event, UUID> {
 
-    EventResponse findById(UUID id);
+    Optional<EventResponse> findEventById(UUID id);
 
     List<Event> findAll();
 
@@ -24,5 +28,10 @@ public interface EventRepository extends CrudRepository<Event, org.yaml.snakeyam
     List<EventResponse> findTop3ByOrderByViewsDesc();
 
     List<EventResponse> findAllByTitleEqualsIgnoreCase(String title);
+
+    @Query(" from Event e where e.title like concat('%', :query, '%')  or e.description like concat('%', :query, '%') or e.location like concat('%', :query, '%')")
+    List<EventResponse> search(@Param("query") String query);
+
+    List<EventResponse> findAllByEventDateEquals(LocalDate date);
 
 }

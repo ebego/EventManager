@@ -18,13 +18,13 @@ public class EventController {
     private final EventService eventService;
 
     @GetMapping("/events")
-    public List<Event> getEvents(){
-        return eventService.getEvents();
+    public List<EventResponse> getEvents(@RequestParam("query") String query){
+        return eventService.getEvents(query);
     }
 
     @GetMapping("/events/{id}")
     public EventResponse getEventById(@PathVariable("id") UUID id) {
-        return eventService.getEventiById(id);
+        return eventService.getEventById(id);
     }
 
     @PostMapping("/events/add")
@@ -40,10 +40,4 @@ public class EventController {
     public List<EventResponse> getMostViewedEvents() {
         return eventService.getMostViewedEvents();
     }
-
-    @GetMapping("/events/search")
-    public ResponseEntity<List<EventResponse>> searchBar(@RequestParam("title") String title){
-        return ResponseEntity.ok(eventService.searchBar(title));
-    }
-
 }

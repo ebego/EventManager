@@ -2,6 +2,7 @@ package com.eventmanager.api.controller;
 
 import com.eventmanager.api.entity.Booking;
 import com.eventmanager.api.service.BookingService;
+import com.eventmanager.api.service.IBookingService;
 import lombok.AllArgsConstructor;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -9,11 +10,11 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.UUID;
 
-@RestController
 @CrossOrigin
+@RestController
 @AllArgsConstructor
 public class BookingController {
-    private final BookingService bookingService;
+    private final IBookingService bookingService;
 
     @GetMapping("/bookings")
     public List<Booking> getBookings(){
