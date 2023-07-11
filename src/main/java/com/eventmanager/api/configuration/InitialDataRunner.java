@@ -38,19 +38,20 @@ public class InitialDataRunner implements CommandLineRunner {
             adminUser = userRepository.save(adminUser);
         else adminUser = dbAdmin.get();
 
-        createIfNotPresent("Enrique Iglesias", "The first event of year!", "2023-09-26", adminUser.getId(), 10000, "eiglesias.jpg",12, 50,"Tirane");
-        createIfNotPresent("Ricky Martin", "The second event of year!", "2023-10-26", adminUser.getId(), 100000, "rmartin.jpg",56,100,"Durres");
-        createIfNotPresent("Sinan Hoxha", "The third event of year!", "2023-12-12", adminUser.getId(), 1000, "shoxha.jpeg",1, 150,"Vlore");
-        createIfNotPresent("Elvana Gjata", "The fourth event of year!", "2024-01-01", adminUser.getId(), 10000, "egjata.jpg",96, 500,"Shkoder");
-        createIfNotPresent("Event11", "The eleventh event of year!", "2023-07-15", adminUser.getId(), 10000, "event11.jpeg",4,165,"Fier");
-        createIfNotPresent("Event5", "The fifth event of year!", "2023-09-10", adminUser.getId(), 10000, "event5.jpeg",15,42,"Korce");
-        createIfNotPresent("Event6", "The sixth event of year!", "2024-08-25", adminUser.getId(), 10000, "event6.jpeg",7,24,"Pogradec");
-        createIfNotPresent("Event7", "The seventh event of year!", "2024-03-12", adminUser.getId(), 10000, "event7.jpeg",35,18,"Tropoje");
-        createIfNotPresent("Event8", "The eighth event of year!", "2024-12-08", adminUser.getId(), 10000, "event8.jpeg",102,35,"Librazhd");
-        createIfNotPresent("Event9", "The ninth event of year!", "2024-06-24", adminUser.getId(), 10000, "event9.jpeg",500,70,"Lushnje");
-        createIfNotPresent("Event10", "The tenth event of year!", "2024-04-30", adminUser.getId(), 10000, "event10.jpeg",11,65,"Sarande");
-        createIfNotPresent("Event12", "The twelfth event of year!", "2023-04-30", adminUser.getId(), 10000, "event12.jpeg",6,25,"Permet");
-        createIfNotPresent("Event13", "The thirteenth event of year!", "2023-05-20", adminUser.getId(), 10000, "event13.jpeg",28,15,"Gjirokaster");
+        createIfNotPresent("Boat ride on the lake", "This weekend it's time to sail, so in Tirana Lake you will see the boats. On Sunday, at 09:00, we invite you all, so that together with your family or friends, you can spend a different, fun, quiet and fresh weekend in nature.", "2023-07-16", adminUser.getId(), 40, "img_1.png",12, 50,"Tirane");
+        createIfNotPresent("Wedding in the Castle", "This activity will bring together many talented young professionals in different genres, such as ballet, dance, song, performance, instrument, culinary, embroidery, etc.", "2023-07-21", adminUser.getId(), 400, "weding.png",56,500,"Shkoder");
+        createIfNotPresent("Korce Beer Festival", "Korce Beer Festival is held every year in August in the city of Korce, home to the oldest and favorite brand of beer. Traditional foods, live music with some international bands playing are featured on the festival menu.", "2023-08-15", adminUser.getId(), 1000, "festaBirres.png",40, 150,"Korce");
+        createIfNotPresent("ION Festival 2023", "Set against the stunning backdrop of Dhërmi, a quaint coastal town on the Albanian Riviera, ION is not just a music festival but a destination holiday experience unto itself, with a parallel focus on mindfulness, cultural discovery and community.", "2024-01-01", adminUser.getId(), 10000, "ION.jpg",106, 500,"Dhërmi Beach, Vlorë, Albania");
+        createIfNotPresent("Enrique Iglesias", "Enrique Iglesias comes in Tirana for the first time for Spanish Culture Week in Skanderbeg Square on 30th June. We can't wait for his concert here, along with the other famous artists that our city will be expecting this summer!", "2023-07-15", adminUser.getId(), 10000, "enrique.jpg",4,300,"Tirane");
+        createIfNotPresent("Elvana Gjata", "Elvana Gjata recently announced that she will be hosting a concert at Air Albania stadium. She said that September 22 will be a very special night for her and she hopes it will be for everyone.", "2023-09-22", adminUser.getId(), 10000, "egjata.jpg",100,42,"Tirane");
+        createIfNotPresent("Rita Ora", "Rita Ora is another famous international artist with Albanian blood. She is returning to serve us with an amazing concert.", "2024-08-25", adminUser.getId(), 10000, "rita.jpg",54,24,"Tirane");
+        createIfNotPresent("Colour Day Festival", "Colour Day Festival offers entertainment and interactivity throughout the festival, not only energetic music that is on trend but also surprises for the annual faithful of this festival.", "2024-03-12", adminUser.getId(), 10000, "color.jpg",27,18,"Tirane");
+        createIfNotPresent("The Pursuit of Art", "‘The Pursuit of Art’ an exhibition by Helidon Gjergji at COD center", "2024-12-08", adminUser.getId(), 10000, "Pursuit.jpg",20,35,"Pogradec");
+        createIfNotPresent("Dua Lipa", "Dua Lipa recently announced that she will be hosting a concert at Air Albania stadium this summer.", "2024-06-24", adminUser.getId(), 10000, "dua.jpg",500,70,"Tirane");
+        createIfNotPresent("Book Fair", "The Book Fair is one of the most important events at the Palace of Congresses in Tirana", "2024-04-30", adminUser.getId(), 10000, "book.jpg",80,56,"Tirane");
+        createIfNotPresent("Sinan Hoxha", "Sinan Hoxha is playing live on Saranda this summer. Book tickets and enjoy the party.", "2023-04-30", adminUser.getId(), 10000, "sinan-2.jpg",6,25,"Sarande");
+        createIfNotPresent("South Outdoor Festival", "The South Outdoor Festival is located along the Albanian Riviera in Borsh, in a beautiful venue in southern Albania. This festival combines tradition, food and celebrates Albanian culture.", "2023-05-20", adminUser.getId(), 10000, "SouthFestival.jpg",28,15,"Borsh");
+
     }
 
     public void createIfNotPresent(String title, String description, String date, UUID ownerId, int maxBooking, String banner, int views, int price, String location) {
