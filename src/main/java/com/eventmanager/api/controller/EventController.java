@@ -45,8 +45,8 @@ public class EventController {
         return eventService.getMostViewedEvents();
     }
 
-    @GetMapping("/api/events")
-    public Page<Event> getEvents(Pageable pageable) {
-        return eventRepository.findAll(pageable);
-    }
+//    @GetMapping("/api/events")
+//    public Page<Event> getEvents(Pageable pageable) {
+//        return eventRepository.findAll(pageable);
+//    }
 }
