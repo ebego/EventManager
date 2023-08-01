@@ -7,8 +7,6 @@ import com.eventmanager.api.repository.UserRepository;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.extern.log4j.Log4j2;
-import org.apache.commons.lang3.StringEscapeUtils;
-import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
@@ -32,6 +30,9 @@ public class EventService {
     }
     public void addEvent(Event event){
         eventRepository.save(event);
+    }
+    public void deleteById(UUID id) {
+     eventRepository.deleteById(id);
     }
     public EventResponse getEventById(UUID id)  {
         Optional<EventResponse> result =  eventRepository.findEventById(id);

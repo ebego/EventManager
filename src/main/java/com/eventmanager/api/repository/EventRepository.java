@@ -2,8 +2,6 @@ package com.eventmanager.api.repository;
 
 import com.eventmanager.api.dto.EventResponse;
 import com.eventmanager.api.entity.Event;
-import org.hibernate.annotations.Parameter;
-import org.springframework.cglib.core.Local;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -20,6 +18,7 @@ import java.util.UUID;
 public interface EventRepository extends JpaRepository<Event, UUID> {
 
     Optional<EventResponse> findEventById(UUID id);
+    void deleteById(UUID id);
 
     List<Event> findAll();
 

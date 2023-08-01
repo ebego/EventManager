@@ -35,6 +35,10 @@ public class EventController {
     public void addEvent(@Validated @RequestBody Event event)  {
         eventService.addEvent(event);
     }
+    @DeleteMapping("/events/delete/{id}")
+    public void deleteEvent(@Validated @PathVariable  UUID id)  {
+        eventService.deleteById(id);
+    }
 
     @GetMapping("/events/latest")
     public List<EventResponse> getLatestEvents() {
