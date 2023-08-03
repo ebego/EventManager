@@ -9,6 +9,8 @@ public interface EventResponse {
     String getTitle();
     LocalDate getEventDate();
     String getDescription();
+
+    int getMaxBookings();
     int getViews();
     String getBanner();
     int getPrice();
