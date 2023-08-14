@@ -12,4 +12,7 @@ import java.util.UUID;
 public interface UserRepository extends CrudRepository<User, UUID> {
     List<User> findAll();
     Optional<User> findByEmailEqualsIgnoreCase(String email);
+
+    User findByUsername(String username);
+
 }

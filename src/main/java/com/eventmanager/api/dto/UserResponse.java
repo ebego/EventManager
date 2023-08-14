@@ -15,4 +15,6 @@ public class UserResponse {
     protected String firstName;
     protected String lastName;
     protected String role;
+    protected String username;
+    protected String password;
 }

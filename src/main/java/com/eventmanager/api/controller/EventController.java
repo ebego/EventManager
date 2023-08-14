@@ -19,7 +19,6 @@ import java.util.UUID;
 @AllArgsConstructor
 public class EventController {
     private final EventService eventService;
-    private final EventRepository eventRepository;
 
     @GetMapping("/events")
     public List<EventResponse> getEvents(@RequestParam("query") String query){
