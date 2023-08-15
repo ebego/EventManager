@@ -42,10 +42,10 @@ public class SecurityConfig {
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 
         http
-//                .authorizeHttpRequests((authz) -> authz
-//                        .requestMatchers("/auth").permitAll()
-//                        .anyRequest().authenticated()
-//                )
+                .authorizeHttpRequests((authz) -> authz
+                        .requestMatchers("/auth").permitAll()
+                        .anyRequest().authenticated()
+                )
                 .addFilterBefore(customFilter(), UsernamePasswordAuthenticationFilter.class);
 //                .httpBasic(withDefaults());
 
