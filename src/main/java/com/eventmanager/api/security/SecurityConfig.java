@@ -43,7 +43,7 @@ public class SecurityConfig {
 
         http
                 .authorizeHttpRequests((authz) -> authz
-                        .requestMatchers("/auth").permitAll()
+                        .requestMatchers("/auth/login").permitAll()
                         .anyRequest().authenticated()
                 )
                 .addFilterBefore(customFilter(), UsernamePasswordAuthenticationFilter.class);
@@ -55,7 +55,7 @@ public class SecurityConfig {
 
     @Bean
     public WebSecurityCustomizer webSecurityCustomizer() {
-        return (web) -> web.ignoring().requestMatchers("/auth");
+        return (web) -> web.ignoring().requestMatchers("/auth/login");
     }
 
     @Bean

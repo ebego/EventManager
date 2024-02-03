@@ -32,7 +32,7 @@ public class AuthController {
         this.jwtUtil = jwtUtil;
     }
 
-    @GetMapping("/auth")
+    @PostMapping("/auth/login")
     public String login(@RequestBody AuthenticationRequest authenticationRequest){
 
         BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
